@@ -8,6 +8,6 @@ script:
 notifications:
   irc:
     channels:
-      - "chat.freenode.net#rubinius"
+      - "irc.rizon.net#vnengine"
     template:
       - "%{repository}/%{branch} (%{commit} - %{author}): %{message}"
