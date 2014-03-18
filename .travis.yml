@@ -1,0 +1,13 @@
+language: cpp
+compiler:
+  - clang
+  - gcc
+script:
+  - ./configure --unsupported-compiler --with-internal-libs
+  - make
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#rubinius"
+    template:
+      - "%{repository}/%{branch} (%{commit} - %{author}): %{message}"
