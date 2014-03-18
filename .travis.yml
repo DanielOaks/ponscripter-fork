@@ -2,14 +2,16 @@ language: cpp
 compiler:
   - clang
   - gcc
-# before_script:
-#   - sudo apt-get -y install build-essential autotools-dev automake autoconf
+before_script:
+  - sudo apt-get -y install build-essential autotools-dev automake autoconf
 script:
+  - which aclocal
+  - which aclocal-1.13
   - ./configure --unsupported-compiler --with-internal-libs
   - make
-notifications:
-  irc:
-    channels:
-      - "irc.rizon.net#vnengine"
-    template:
-      - "%{repository}/%{branch} (%{commit} - %{author}): %{message}"
+# notifications:
+#   irc:
+#     channels:
+#       - "irc.rizon.net#vnengine"
+#     template:
+#       - "%{repository}/%{branch} (%{commit} - %{author}): %{message}"
