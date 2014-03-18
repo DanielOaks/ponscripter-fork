@@ -6,9 +6,10 @@ before_script:
   - sudo apt-get -y install build-essential autotools-dev automake autoconf
 script:
   - which aclocal
+  - aclocal --version
   - which aclocal-1.13
-  - ./configure --unsupported-compiler --with-internal-libs
-  - make
+  # - ./configure --unsupported-compiler --with-internal-libs
+  # - make
 # notifications:
 #   irc:
 #     channels:
