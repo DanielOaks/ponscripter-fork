@@ -2,6 +2,8 @@ language: cpp
 compiler:
   - clang
   - gcc
+before_script:
+  - sudo apt-get -y install build-essential autotools-dev automake
 script:
   - ./configure --unsupported-compiler --with-internal-libs
   - make
