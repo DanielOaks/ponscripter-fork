@@ -1,15 +1,15 @@
 language: cpp
 compiler:
   - clang
-  - gcc
+  # - gcc
 before_script:
   - sudo apt-get update -qq
   - sudo apt-get -y install build-essential # autotools-dev automake autoconf
 
+  - cd ~
   - mkdir deps
-  - cd deps
 
-  - cd ../../../
+  - cd ~/deps
   - wget https://www.libsdl.org/release/SDL2-2.0.3.tar.gz
   - tar xvf SDL2-2.0.3.tar.gz
   - cd SDL2-2.0.3
@@ -19,7 +19,7 @@ before_script:
   - make
   - sudo make install
 
-  - cd ../../
+  - cd ~/deps
   - wget https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.0.tar.gz
   - tar xvf SDL2_image-2.0.0.tar.gz
   - cd SDL2_image-2.0.0
@@ -27,19 +27,46 @@ before_script:
   - make
   - sudo make install
 
-  - cd ~
-  - mkdir build
-  - cd build
+  - cd ~/deps
+  - wget https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.0.tar.gz
+  - tar xvf SDL2_mixer-2.0.0.tar.gz
+  - cd SDL2_mixer-2.0.0
+  - ./configure
+  - make
+  - sudo make install
 
-  - sudo apt-get install -y libsdl2-mixer-dev
-  - sudo apt-get install -y libbz2-dev
+  - cd ~/deps
+  - wget http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz
+  - tar xvf bzip2-1.0.6.tar.gz
+  - cd bzip2-1.0.6
+  - ./configure
+  - make
+  - sudo make install
+
+  # - cd ~/deps
+  # - wget 
+  # - tar xvf 
+  # - cd 
+  # - ./configure
+  # - make
+  # - sudo make install
+
+  # - cd ~/deps
+  # - wget 
+  # - tar xvf 
+  # - cd 
+  # - ./configure
+  # - make
+  # - sudo make install
+
   - sudo apt-get install -y libsmpeg-dev
   - sudo apt-get install -y libfreetype6-dev
   - sudo apt-get install -y libnotify-dev
+
+  - cd ~
+  - mkdir -p build
+  - cd ~/build
 script:
-  - which aclocal
-  - aclocal --version
-  - which aclocal-1.13
   - ./configure --unsupported-compiler
   # - make
 # notifications:
