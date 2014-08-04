@@ -3,12 +3,20 @@ compiler:
   - clang
   - gcc
 before_script:
-  - sudo apt-get -y install build-essential autotools-dev automake autoconf
+  - sudo apt-get update -qq
+  - sudo apt-get -y install build-essential # autotools-dev automake autoconf
+  - sudo apt-get install -y libsdl2-dev
+  - sudo apt-get install -y libsdl2-image-dev
+  - sudo apt-get install -y libsdl2-mixer-dev
+  - sudo apt-get install -y libbz2-dev
+  - sudo apt-get install -y libsmpeg-dev
+  - sudo apt-get install -y libfreetype6-dev
+  - sudo apt-get install -y libnotify-dev
 script:
   - which aclocal
   - aclocal --version
   - which aclocal-1.13
-  # - ./configure --unsupported-compiler --with-internal-libs
+  - ./configure --unsupported-compiler
   # - make
 # notifications:
 #   irc:
