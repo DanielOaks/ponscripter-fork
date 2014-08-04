@@ -6,6 +6,11 @@ before_script:
   - sudo apt-get update -qq
   - sudo apt-get -y install build-essential # autotools-dev automake autoconf
 
+  - sudo apt-get install -y libbz2-dev
+  - sudo apt-get install -y libsmpeg-dev
+  - sudo apt-get install -y libfreetype6-dev
+  - sudo apt-get install -y libnotify-dev
+
   - cd ~
   - mkdir deps
 
@@ -35,18 +40,10 @@ before_script:
   - make
   - sudo make install
 
-  - cd ~/deps
-  - wget http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz
-  - tar xvf bzip2-1.0.6.tar.gz
-  - cd bzip2-1.0.6
-  - ./configure
-  - make
-  - sudo make install
-
   # - cd ~/deps
-  # - wget 
-  # - tar xvf 
-  # - cd 
+  # - wget http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz
+  # - tar xvf bzip2-1.0.6.tar.gz
+  # - cd bzip2-1.0.6
   # - ./configure
   # - make
   # - sudo make install
@@ -59,9 +56,13 @@ before_script:
   # - make
   # - sudo make install
 
-  - sudo apt-get install -y libsmpeg-dev
-  - sudo apt-get install -y libfreetype6-dev
-  - sudo apt-get install -y libnotify-dev
+  # - cd ~/deps
+  # - wget 
+  # - tar xvf 
+  # - cd 
+  # - ./configure
+  # - make
+  # - sudo make install
 
   - cd ~
   - mkdir -p build
