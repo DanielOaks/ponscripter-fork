@@ -22,7 +22,7 @@ before_script:
   - cmake ..
   - make
   - sudo make install
-  - cd ..
+  - cd ../..
 
   - wget https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.0.tar.gz
   - tar xvf SDL2_image-2.0.0.tar.gz
@@ -40,31 +40,9 @@ before_script:
   - sudo make install
   - cd ..
 
-  # - cd ~/deps
-  # - wget http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz
-  # - tar xvf bzip2-1.0.6.tar.gz
-  # - cd bzip2-1.0.6
-  # - ./configure
-  # - make
-  # - sudo make install
-
-  # - cd ~/deps
-  # - wget 
-  # - tar xvf 
-  # - cd 
-  # - ./configure
-  # - make
-  # - sudo make install
-
-  # - cd ~/deps
-  # - wget 
-  # - tar xvf 
-  # - cd 
-  # - ./configure
-  # - make
-  # - sudo make install
-
+  - pwd
   - cd ..
+  - pwd
 script:
   - ./configure --unsupported-compiler
   # - make
